@@ -1,0 +1,7 @@
+C:\Git\SampleCode\DBAccess\DBAccess\bin\Debug\DBAccess.exe.config
+C:\Git\SampleCode\DBAccess\DBAccess\bin\Debug\DBAccess.exe
+C:\Git\SampleCode\DBAccess\DBAccess\bin\Debug\DBAccess.pdb
+C:\Git\SampleCode\DBAccess\DBAccess\obj\Debug\DBAccess.csprojAssemblyReference.cache
+C:\Git\SampleCode\DBAccess\DBAccess\obj\Debug\DBAccess.csproj.CoreCompileInputs.cache
+C:\Git\SampleCode\DBAccess\DBAccess\obj\Debug\DBAccess.exe
+C:\Git\SampleCode\DBAccess\DBAccess\obj\Debug\DBAccess.pdb
