@@ -1,0 +1,10 @@
+MicrosoftSQLServerManagement←DB編集用にインストール
+
+
+Windowsの「サービス」でSQLServer（SQL EXPRESS）が開始になっていることを確認
+ログオン⇒アカウントにチェックしており、パスワードを空欄にしてOKを押す
+
+MicrosoftSQLServerManagementから接続
+Databaseで右クリックしてデータベースをデフォルトで作成
+NewQueryを開いて、該当データベースを選択した状態で「Create」SQL文を打つとテーブルができる
+できたテーブルを右クリックして「Edit Top 200 row」を選択すると、簡単に編集ができる
