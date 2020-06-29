@@ -1,0 +1,1 @@
+MicrosoftSQLServerManagement←DB編集用にインストール
