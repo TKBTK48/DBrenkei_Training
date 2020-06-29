@@ -100,6 +100,10 @@ namespace WesternCastle1
                     break;
                 case 2:
                     Console.WriteLine("データの追加を行います");
+                    var dataAdd = new DataAdd();
+                    int countnum = dataAdd.DataAddtool();
+                    Console.WriteLine($"{countnum}件のデータの追加に成功しました");
+                    output = Search.ALLSearchsql();
                     break;
                 case 3:
                     Console.WriteLine("データの削除を行います");
@@ -107,36 +111,36 @@ namespace WesternCastle1
             }
             DataRowCollection rows = output.Rows;
 
-            //if (rows.Count > 0)
-            //{
-            //    // データがあったら検索結果の出力
-            //    Console.WriteLine("検索結果を出力");
-            //    // カラムはDataTable.Columnsで取得でき、型がDataColumnCollection
-            //    DataColumnCollection columns = output.Columns;
+            if (rows.Count > 0)
+            {
+                // データがあったら検索結果の出力
+                Console.WriteLine("検索結果を出力");
+                // カラムはDataTable.Columnsで取得でき、型がDataColumnCollection
+                DataColumnCollection columns = output.Columns;
 
-            //    // カラム名表示
-            //    foreach (var column in columns)
-            //    {
-            //        Console.Write(column + "  ");
-            //    }
+                // カラム名表示
+                foreach (var column in columns)
+                {
+                    Console.Write(column + "  ");
+                }
 
-            //    Console.WriteLine("\n--------------------------------------------------------------------------------");
+                Console.WriteLine("\n--------------------------------------------------------------------------------");
 
-            //    // ロウの各データを表示
-            //    for (int r = 0; r < rows.Count; r++)
-            //    {
-            //        for (int c = 0; c < columns.Count; c++)
-            //        {
-            //            Console.Write(rows[r][c] + "\t");
-            //        }
-            //        Console.WriteLine();
-            //    }
-            //    Console.WriteLine("--------------------------------------------------------------------------------\n");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("検索結果は0件でした\n");
-            //}
+                // ロウの各データを表示
+                for (int r = 0; r < rows.Count; r++)
+                {
+                    for (int c = 0; c < columns.Count; c++)
+                    {
+                        Console.Write(rows[r][c] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+                Console.WriteLine("--------------------------------------------------------------------------------\n");
+            }
+            else
+            {
+                Console.WriteLine("検索結果は0件でした\n");
+            }
         }
     }
 }
