@@ -1,0 +1,7 @@
+C:\Git\C-SharpHighLevel\EMSystem\bin\Debug\EMSystem_CUI.exe.config
+C:\Git\C-SharpHighLevel\EMSystem\bin\Debug\EMSystem_CUI.exe
+C:\Git\C-SharpHighLevel\EMSystem\bin\Debug\EMSystem_CUI.pdb
+C:\Git\C-SharpHighLevel\EMSystem\obj\Debug\EMSystem_CUI.csprojAssemblyReference.cache
+C:\Git\C-SharpHighLevel\EMSystem\obj\Debug\EMSystem_CUI.csproj.CoreCompileInputs.cache
+C:\Git\C-SharpHighLevel\EMSystem\obj\Debug\EMSystem_CUI.exe
+C:\Git\C-SharpHighLevel\EMSystem\obj\Debug\EMSystem_CUI.pdb
