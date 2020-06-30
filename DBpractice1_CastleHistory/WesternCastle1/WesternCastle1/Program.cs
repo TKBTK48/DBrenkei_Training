@@ -64,7 +64,7 @@ namespace WesternCastle1
                             string input = Console.ReadLine();
                             output = Search.NameChoiceSearchsql(input);
                         }
-                        else if (case3 ==1)
+                        else if (case3 == 1)
                         {
                             Console.WriteLine("検索年号を入力してください");
                             var casecheck4 = new Casenumbercheck();
@@ -115,22 +115,18 @@ namespace WesternCastle1
             }
             DataRowCollection rows = output.Rows;
 
+
             if (rows.Count > 0)
             {
-                // データがあったら検索結果の出力
                 Console.WriteLine("検索結果を出力");
-                // カラムはDataTable.Columnsで取得でき、型がDataColumnCollection
                 DataColumnCollection columns = output.Columns;
 
-                // カラム名表示
                 foreach (var column in columns)
                 {
-                    Console.Write(column + "  ");
+                    Console.Write(column + "\t");
                 }
-
                 Console.WriteLine("\n--------------------------------------------------------------------------------");
 
-                // ロウの各データを表示
                 for (int r = 0; r < rows.Count; r++)
                 {
                     for (int c = 0; c < columns.Count; c++)
@@ -145,6 +141,7 @@ namespace WesternCastle1
             {
                 Console.WriteLine("検索結果は0件でした\n");
             }
+
         }
     }
 }
