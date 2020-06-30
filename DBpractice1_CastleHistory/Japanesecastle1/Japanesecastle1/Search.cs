@@ -44,10 +44,11 @@ namespace Japanesecastle1
             return dataTable;
         }
 
-        public int insertrow = 0;
+        
 
         public static DataTable ChoiceSearch()
         {
+            int insertrow = 0;
             SqlConnection sqlConnection = null;
             SqlCommand sqlCommand = null;
             SqlTransaction sqlTransaction = null;
@@ -73,20 +74,159 @@ namespace Japanesecastle1
                 stringBuilder.AppendLine(" ,defence_power_grade = @defence");
                 stringBuilder.AppendLine(" ,exist_flg = @exist");
 
-
-
-
                 sqlCommand = new SqlCommand(stringBuilder.ToString(), sqlConnection, sqlTransaction);
 
+                SqlParameter para = sqlCommand.CreateParameter();
+                para.ParameterName = "@name";
+                para.SqlDbType = SqlDbType.NVarChar;
+                para.Direction = ParameterDirection.Input;
+                Console.WriteLine();
+                Console.WriteLine("城名を入力してください");
+                string input1 = Console.ReadLine();
+                para.Value = input1;
+                sqlCommand.Parameters.Add(para);
+                
 
 
+                para = sqlCommand.CreateParameter();
+                para.ParameterName = "@buildyear";
+                para.SqlDbType = SqlDbType.Int;
+                para.Direction = ParameterDirection.Input;
+                int input2;
+                while (true)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("築城年を入力してください");
+                    try
+                    {
+                        input2 = int.Parse(Console.ReadLine());
+                        break;
+                    }
+                    catch
+                    {
+                        Console.WriteLine("不正な値です");
+                        continue;
+                    }
+                }
+                para.Value = input2;
+                sqlCommand.Parameters.Add(para);
                 insertrow = sqlCommand.ExecuteNonQuery();
 
+
+
+                para = sqlCommand.CreateParameter();
+                para.ParameterName = "@prefecturename";
+                para.SqlDbType = SqlDbType.NVarChar;
+                para.Direction = ParameterDirection.Input;
+                Console.WriteLine();
+                Console.WriteLine("城の所在する都道府県名を入力してください");
+                string input3 = Console.ReadLine();
+                para.Value = input3;
+                sqlCommand.Parameters.Add(para);
+                insertrow = sqlCommand.ExecuteNonQuery();
+
+
+                para = sqlCommand.CreateParameter();
+                para.ParameterName = "@owner";
+                para.SqlDbType = SqlDbType.NVarChar;
+                para.Direction = ParameterDirection.Input;
+                Console.WriteLine();
+                Console.WriteLine("建築人物名を入力してください");
+                string input4 = Console.ReadLine();
+                para.Value = input4;
+                sqlCommand.Parameters.Add(para);
+                insertrow = sqlCommand.ExecuteNonQuery();
+
+
+
+                para = sqlCommand.CreateParameter();
+                para.ParameterName = "@important";
+                para.SqlDbType = SqlDbType.Int;
+                para.Direction = ParameterDirection.Input;
+                int input5;
+                while (true)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("重要度ランクを入力してください");
+                    try
+                    {
+                        input5 = int.Parse(Console.ReadLine());
+                        break;
+                    }
+                    catch
+                    {
+                        Console.WriteLine("不正な値です");
+                        continue;
+                    }
+                }
+                para.Value = input5;
+                sqlCommand.Parameters.Add(para);
+                insertrow = sqlCommand.ExecuteNonQuery();
+
+
+
+                para = sqlCommand.CreateParameter();
+                para.ParameterName = "@defence";
+                para.SqlDbType = SqlDbType.Int;
+                para.Direction = ParameterDirection.Input;
+                int input6;
+                while (true)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("防衛力ランクを入力してください");
+                    try
+                    {
+                        input6 = int.Parse(Console.ReadLine());
+                        break;
+                    }
+                    catch
+                    {
+                        Console.WriteLine("不正な値です");
+                        continue;
+                    }
+                }
+                para.Value = input6;
+                sqlCommand.Parameters.Add(para);
+                insertrow = sqlCommand.ExecuteNonQuery();
+
+
+
+
+                para = sqlCommand.CreateParameter();
+                para.ParameterName = "@exist";
+                para.SqlDbType = SqlDbType.Int;
+                para.Direction = ParameterDirection.Input;
+                int input7;
+                while (true)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("現存フラグを入力してください");
+                    Console.WriteLine("現存せず:0");
+                    Console.WriteLine("現存:1");
+                    try
+                    {
+                        input7 = int.Parse(Console.ReadLine());
+                        break;
+                    }
+                    catch
+                    {
+                        Console.WriteLine("不正な値です");
+                        continue;
+                    }
+                }
+                para.Value = input7;
+                sqlCommand.Parameters.Add(para);
+                sqlDataReader = sqlCommand.ExecuteReader();
+                dataTable.Load(sqlDataReader);
+                
             }
             finally
             {
-
+                sqlDataReader.Close();
+                sqlCommand.Dispose();
+                sqlConnection.Close();
             }
+            return dataTable;
     }
     }
 }

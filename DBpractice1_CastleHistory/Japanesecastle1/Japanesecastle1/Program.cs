@@ -40,7 +40,7 @@ namespace Japanesecastle1
                     }
                     else
                     {
-
+                        dataTable = Search.ChoiceSearch();
                     }
                     break;
 
