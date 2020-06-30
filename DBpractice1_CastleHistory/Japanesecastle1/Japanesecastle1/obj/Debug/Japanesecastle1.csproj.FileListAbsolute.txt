@@ -1,0 +1,7 @@
+C:\Git\DBpractice1_CastleHistory\Japanesecastle1\Japanesecastle1\bin\Debug\Japanesecastle1.exe.config
+C:\Git\DBpractice1_CastleHistory\Japanesecastle1\Japanesecastle1\bin\Debug\Japanesecastle1.exe
+C:\Git\DBpractice1_CastleHistory\Japanesecastle1\Japanesecastle1\bin\Debug\Japanesecastle1.pdb
+C:\Git\DBpractice1_CastleHistory\Japanesecastle1\Japanesecastle1\obj\Debug\Japanesecastle1.csprojAssemblyReference.cache
+C:\Git\DBpractice1_CastleHistory\Japanesecastle1\Japanesecastle1\obj\Debug\Japanesecastle1.csproj.CoreCompileInputs.cache
+C:\Git\DBpractice1_CastleHistory\Japanesecastle1\Japanesecastle1\obj\Debug\Japanesecastle1.exe
+C:\Git\DBpractice1_CastleHistory\Japanesecastle1\Japanesecastle1\obj\Debug\Japanesecastle1.pdb
