@@ -107,6 +107,10 @@ namespace WesternCastle1
                     break;
                 case 3:
                     Console.WriteLine("データの削除を行います");
+                    var datadelete = new DataDelete();
+                    int countnum2 = datadelete.DataDeletetool();
+                    Console.WriteLine($"{countnum2}件のデータの削除に成功しました");
+                    output = Search.ALLSearchsql();
                     break;
             }
             DataRowCollection rows = output.Rows;
