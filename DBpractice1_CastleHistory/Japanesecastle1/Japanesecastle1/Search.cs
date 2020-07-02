@@ -46,7 +46,7 @@ namespace Japanesecastle1
 
         
 
-        public static DataTable ChoiceSearch()
+        public static DataTable NameSearch()
         {
             int insertrow = 0;
             SqlConnection sqlConnection = null;
@@ -67,12 +67,6 @@ namespace Japanesecastle1
                 stringBuilder.AppendLine("SELECT * FROM japanesecastle");
                 stringBuilder.AppendLine("  where   ");
                 stringBuilder.AppendLine(" castle_name = @name");
-                stringBuilder.AppendLine(" ,build_year = @buildyear");
-                stringBuilder.AppendLine(" ,prefecture_name = @prefecturename");
-                stringBuilder.AppendLine(" ,owner_name = @owner");
-                stringBuilder.AppendLine(" ,important_grade = @important");
-                stringBuilder.AppendLine(" ,defence_power_grade = @defence");
-                stringBuilder.AppendLine(" ,exist_flg = @exist");
 
                 sqlCommand = new SqlCommand(stringBuilder.ToString(), sqlConnection, sqlTransaction);
 
@@ -85,10 +79,45 @@ namespace Japanesecastle1
                 string input1 = Console.ReadLine();
                 para.Value = input1;
                 sqlCommand.Parameters.Add(para);
-                
+                sqlDataReader = sqlCommand.ExecuteReader();
+                dataTable.Load(sqlDataReader);
+            }
+            finally
+            {
+                sqlDataReader.Close();
+                sqlCommand.Dispose();
+                sqlConnection.Close();
+            }
+            return dataTable;
+    }
 
 
-                para = sqlCommand.CreateParameter();
+
+        public static DataTable BuildyearSearch()
+        {
+            int insertrow = 0;
+            SqlConnection sqlConnection = null;
+            SqlCommand sqlCommand = null;
+            SqlTransaction sqlTransaction = null;
+            SqlDataReader sqlDataReader = null;
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                sqlConnection = new SqlConnection();
+                sqlConnection.ConnectionString = DB_CONNECT;
+                sqlConnection.Open();
+
+                sqlTransaction = sqlConnection.BeginTransaction();
+
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.AppendLine("SELECT * FROM japanesecastle");
+                stringBuilder.AppendLine("  where   ");
+                stringBuilder.AppendLine(" ,build_year = @buildyear");
+
+                sqlCommand = new SqlCommand(stringBuilder.ToString(), sqlConnection, sqlTransaction);
+
+                SqlParameter para = sqlCommand.CreateParameter();
                 para.ParameterName = "@buildyear";
                 para.SqlDbType = SqlDbType.Int;
                 para.Direction = ParameterDirection.Input;
@@ -110,11 +139,47 @@ namespace Japanesecastle1
                 }
                 para.Value = input2;
                 sqlCommand.Parameters.Add(para);
-                insertrow = sqlCommand.ExecuteNonQuery();
+                sqlDataReader = sqlCommand.ExecuteReader();
+                dataTable.Load(sqlDataReader);
+            }
+            finally
+            {
+                sqlDataReader.Close();
+                sqlCommand.Dispose();
+                sqlConnection.Close();
+            }
+            return dataTable;
+        }
 
 
 
-                para = sqlCommand.CreateParameter();
+
+
+        public static DataTable PrefectureSearch()
+        {
+            int insertrow = 0;
+            SqlConnection sqlConnection = null;
+            SqlCommand sqlCommand = null;
+            SqlTransaction sqlTransaction = null;
+            SqlDataReader sqlDataReader = null;
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                sqlConnection = new SqlConnection();
+                sqlConnection.ConnectionString = DB_CONNECT;
+                sqlConnection.Open();
+
+                sqlTransaction = sqlConnection.BeginTransaction();
+
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.AppendLine("SELECT * FROM japanesecastle");
+                stringBuilder.AppendLine("  where   ");
+                stringBuilder.AppendLine(" ,prefecture_name = @prefecturename");
+
+                sqlCommand = new SqlCommand(stringBuilder.ToString(), sqlConnection, sqlTransaction);
+
+                SqlParameter para = sqlCommand.CreateParameter();
                 para.ParameterName = "@prefecturename";
                 para.SqlDbType = SqlDbType.NVarChar;
                 para.Direction = ParameterDirection.Input;
@@ -123,10 +188,48 @@ namespace Japanesecastle1
                 string input3 = Console.ReadLine();
                 para.Value = input3;
                 sqlCommand.Parameters.Add(para);
-                insertrow = sqlCommand.ExecuteNonQuery();
+                sqlDataReader = sqlCommand.ExecuteReader();
+                dataTable.Load(sqlDataReader);
+            }
+            finally
+            {
+                sqlDataReader.Close();
+                sqlCommand.Dispose();
+                sqlConnection.Close();
+            }
+            return dataTable;
+        }
 
 
-                para = sqlCommand.CreateParameter();
+
+
+
+        public static DataTable OwnerSearch()
+        {
+            int insertrow = 0;
+            SqlConnection sqlConnection = null;
+            SqlCommand sqlCommand = null;
+            SqlTransaction sqlTransaction = null;
+            SqlDataReader sqlDataReader = null;
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                sqlConnection = new SqlConnection();
+                sqlConnection.ConnectionString = DB_CONNECT;
+                sqlConnection.Open();
+
+                sqlTransaction = sqlConnection.BeginTransaction();
+
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.AppendLine("SELECT * FROM japanesecastle");
+                stringBuilder.AppendLine("  where   ");
+                stringBuilder.AppendLine(" ,owner_name = @owner");
+
+
+                sqlCommand = new SqlCommand(stringBuilder.ToString(), sqlConnection, sqlTransaction);
+
+                SqlParameter para = sqlCommand.CreateParameter();
                 para.ParameterName = "@owner";
                 para.SqlDbType = SqlDbType.NVarChar;
                 para.Direction = ParameterDirection.Input;
@@ -135,11 +238,47 @@ namespace Japanesecastle1
                 string input4 = Console.ReadLine();
                 para.Value = input4;
                 sqlCommand.Parameters.Add(para);
-                insertrow = sqlCommand.ExecuteNonQuery();
+                sqlDataReader = sqlCommand.ExecuteReader();
+                dataTable.Load(sqlDataReader);
+
+            }
+            finally
+            {
+                sqlDataReader.Close();
+                sqlCommand.Dispose();
+                sqlConnection.Close();
+            }
+            return dataTable;
+        }
 
 
 
-                para = sqlCommand.CreateParameter();
+
+        public static DataTable ImportantSearch()
+        {
+            int insertrow = 0;
+            SqlConnection sqlConnection = null;
+            SqlCommand sqlCommand = null;
+            SqlTransaction sqlTransaction = null;
+            SqlDataReader sqlDataReader = null;
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                sqlConnection = new SqlConnection();
+                sqlConnection.ConnectionString = DB_CONNECT;
+                sqlConnection.Open();
+
+                sqlTransaction = sqlConnection.BeginTransaction();
+
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.AppendLine("SELECT * FROM japanesecastle");
+                stringBuilder.AppendLine("  where   ");
+                stringBuilder.AppendLine(" ,important_grade = @important");
+ 
+                sqlCommand = new SqlCommand(stringBuilder.ToString(), sqlConnection, sqlTransaction);
+
+                SqlParameter para = sqlCommand.CreateParameter();
                 para.ParameterName = "@important";
                 para.SqlDbType = SqlDbType.Int;
                 para.Direction = ParameterDirection.Input;
@@ -161,11 +300,50 @@ namespace Japanesecastle1
                 }
                 para.Value = input5;
                 sqlCommand.Parameters.Add(para);
-                insertrow = sqlCommand.ExecuteNonQuery();
+                sqlDataReader = sqlCommand.ExecuteReader();
+                dataTable.Load(sqlDataReader);
+
+            }
+            finally
+            {
+                sqlDataReader.Close();
+                sqlCommand.Dispose();
+                sqlConnection.Close();
+            }
+            return dataTable;
+        }
 
 
 
-                para = sqlCommand.CreateParameter();
+
+
+
+
+        public static DataTable DefenceSearch()
+        {
+            int insertrow = 0;
+            SqlConnection sqlConnection = null;
+            SqlCommand sqlCommand = null;
+            SqlTransaction sqlTransaction = null;
+            SqlDataReader sqlDataReader = null;
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                sqlConnection = new SqlConnection();
+                sqlConnection.ConnectionString = DB_CONNECT;
+                sqlConnection.Open();
+
+                sqlTransaction = sqlConnection.BeginTransaction();
+
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.AppendLine("SELECT * FROM japanesecastle");
+                stringBuilder.AppendLine("  where   ");
+                stringBuilder.AppendLine(" ,defence_power_grade = @defence");
+
+                sqlCommand = new SqlCommand(stringBuilder.ToString(), sqlConnection, sqlTransaction);
+
+                SqlParameter para = sqlCommand.CreateParameter();
                 para.ParameterName = "@defence";
                 para.SqlDbType = SqlDbType.Int;
                 para.Direction = ParameterDirection.Input;
@@ -187,12 +365,50 @@ namespace Japanesecastle1
                 }
                 para.Value = input6;
                 sqlCommand.Parameters.Add(para);
-                insertrow = sqlCommand.ExecuteNonQuery();
+                sqlDataReader = sqlCommand.ExecuteReader();
+                dataTable.Load(sqlDataReader);
+
+            }
+            finally
+            {
+                sqlDataReader.Close();
+                sqlCommand.Dispose();
+                sqlConnection.Close();
+            }
+            return dataTable;
+        }
 
 
 
 
-                para = sqlCommand.CreateParameter();
+
+
+
+        public static DataTable ExistSearch()
+        {
+            int insertrow = 0;
+            SqlConnection sqlConnection = null;
+            SqlCommand sqlCommand = null;
+            SqlTransaction sqlTransaction = null;
+            SqlDataReader sqlDataReader = null;
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                sqlConnection = new SqlConnection();
+                sqlConnection.ConnectionString = DB_CONNECT;
+                sqlConnection.Open();
+
+                sqlTransaction = sqlConnection.BeginTransaction();
+
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.AppendLine("SELECT * FROM japanesecastle");
+                stringBuilder.AppendLine("  where   ");
+                stringBuilder.AppendLine(" ,exist_flg = @exist");
+
+                sqlCommand = new SqlCommand(stringBuilder.ToString(), sqlConnection, sqlTransaction);
+
+                SqlParameter para = sqlCommand.CreateParameter();
                 para.ParameterName = "@exist";
                 para.SqlDbType = SqlDbType.Int;
                 para.Direction = ParameterDirection.Input;
@@ -218,7 +434,7 @@ namespace Japanesecastle1
                 sqlCommand.Parameters.Add(para);
                 sqlDataReader = sqlCommand.ExecuteReader();
                 dataTable.Load(sqlDataReader);
-                
+
             }
             finally
             {
@@ -227,6 +443,7 @@ namespace Japanesecastle1
                 sqlConnection.Close();
             }
             return dataTable;
+        }
     }
-    }
+
 }

@@ -12,3 +12,10 @@ C:\Git\DBpractice1_CastleHistory\WesternCastle1\WesternCastle1\obj\Debug\Western
 C:\Git\DBpractice1_CastleHistory\WesternCastle1\WesternCastle1\obj\Debug\WesternCastle1.csproj.CoreCompileInputs.cache
 C:\Git\DBpractice1_CastleHistory\WesternCastle1\WesternCastle1\obj\Debug\WesternCastle1.exe
 C:\Git\DBpractice1_CastleHistory\WesternCastle1\WesternCastle1\obj\Debug\WesternCastle1.pdb
+C:\Users\1180031.DESKTOP-BERP2TU\Desktop\beginner_test\DBpractice1_CastleHistory\WesternCastle1\WesternCastle1\bin\Debug\WesternCastle1.exe.config
+C:\Users\1180031.DESKTOP-BERP2TU\Desktop\beginner_test\DBpractice1_CastleHistory\WesternCastle1\WesternCastle1\bin\Debug\WesternCastle1.exe
+C:\Users\1180031.DESKTOP-BERP2TU\Desktop\beginner_test\DBpractice1_CastleHistory\WesternCastle1\WesternCastle1\bin\Debug\WesternCastle1.pdb
+C:\Users\1180031.DESKTOP-BERP2TU\Desktop\beginner_test\DBpractice1_CastleHistory\WesternCastle1\WesternCastle1\obj\Debug\WesternCastle1.csprojAssemblyReference.cache
+C:\Users\1180031.DESKTOP-BERP2TU\Desktop\beginner_test\DBpractice1_CastleHistory\WesternCastle1\WesternCastle1\obj\Debug\WesternCastle1.csproj.CoreCompileInputs.cache
+C:\Users\1180031.DESKTOP-BERP2TU\Desktop\beginner_test\DBpractice1_CastleHistory\WesternCastle1\WesternCastle1\obj\Debug\WesternCastle1.exe
+C:\Users\1180031.DESKTOP-BERP2TU\Desktop\beginner_test\DBpractice1_CastleHistory\WesternCastle1\WesternCastle1\obj\Debug\WesternCastle1.pdb
