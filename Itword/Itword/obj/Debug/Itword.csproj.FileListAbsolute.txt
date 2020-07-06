@@ -1,0 +1,7 @@
+C:\Users\1180031.DESKTOP-BERP2TU\Desktop\beginner_test\Itword\Itword\obj\Debug\Itword.csprojAssemblyReference.cache
+C:\Users\1180031.DESKTOP-BERP2TU\Desktop\beginner_test\Itword\Itword\obj\Debug\Itword.csproj.CoreCompileInputs.cache
+C:\Users\1180031.DESKTOP-BERP2TU\Desktop\beginner_test\Itword\Itword\bin\Debug\Itword.exe.config
+C:\Users\1180031.DESKTOP-BERP2TU\Desktop\beginner_test\Itword\Itword\bin\Debug\Itword.exe
+C:\Users\1180031.DESKTOP-BERP2TU\Desktop\beginner_test\Itword\Itword\bin\Debug\Itword.pdb
+C:\Users\1180031.DESKTOP-BERP2TU\Desktop\beginner_test\Itword\Itword\obj\Debug\Itword.exe
+C:\Users\1180031.DESKTOP-BERP2TU\Desktop\beginner_test\Itword\Itword\obj\Debug\Itword.pdb
