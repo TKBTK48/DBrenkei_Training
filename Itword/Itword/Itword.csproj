@@ -46,6 +46,7 @@
     <Compile Include="Daos\BaseDao.cs" />
     <Compile Include="Dto\TableDto.cs" />
     <Compile Include="Main\INTcheck.cs" />
+    <Compile Include="Main\Output.cs" />
     <Compile Include="Main\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

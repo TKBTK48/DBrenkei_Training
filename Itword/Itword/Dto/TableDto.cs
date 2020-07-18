@@ -8,6 +8,7 @@ namespace Itword.Dto
 {
     public class TableDto
     {
+		public int IDNum { get; set; }
 		public string Name { get; set; }
 		public string Sys1 { get; set; }
 		public string Sys2 { get; set; }
